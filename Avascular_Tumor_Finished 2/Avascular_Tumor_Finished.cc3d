@@ -1,5 +1,0 @@
-<Simulation version="4.2.5">
-   <XMLScript Type="XMLScript">Simulation/avasctumo.xml</XMLScript>
-   <PythonScript Type="PythonScript">Simulation/avasctumo.py</PythonScript>
-   <Resource Type="Python">Simulation/avasctumoSteppables.py</Resource>
-</Simulation>
