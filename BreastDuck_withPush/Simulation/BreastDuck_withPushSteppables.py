@@ -124,6 +124,8 @@ class GrowthSteppable(SteppableBasePy):
             secretor.uptakeInsideCell(cell, 2.0, 0.01)
             if field[cell.xCOM, cell.yCOM, 0]<49:
                 self.delete_cell(cell)
+                self.type = self.LUM
+                 
                 
         for cell in self.cell_list_by_type(self.PROL):
             cellX = cell.xCOM
@@ -171,16 +173,16 @@ class MitosisSteppable(MitosisSteppableBase):
 
         cells_to_divide=[]
         for cell in self.cell_list:
-            if cell.volume>60 and random.random() < 0.5 and cell.type != self.BOUND:
+            if cell.volume>60 and random.random() < 0.1 and cell.type != self.BOUND:
                 cells_to_divide.append(cell)
 
         for cell in cells_to_divide:
 
-            self.divide_cell_random_orientation(cell)
+            # self.divide_cell_random_orientation(cell)
             # Other valid options
             # self.divide_cell_orientation_vector_based(cell,1,1,0)
             # self.divide_cell_along_major_axis(cell)
-            # self.divide_cell_along_minor_axis(cell)
+            self.divide_cell_along_minor_axis(cell)
 
     def update_attributes(self):
         # reducing parent target volume
